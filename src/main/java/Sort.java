@@ -11,6 +11,7 @@ public class Sort {
 
     Sort(){}
 
+    //sorting orders by picking time
     public JSONArray sortJSON(JSONArray jsonArr) {
 
         JSONArray sortedJsonArray = new JSONArray();
@@ -18,7 +19,7 @@ public class Sort {
         List<JSONObject> jsonValues = new ArrayList<JSONObject>();
         jsonArr.forEach( emp -> jsonValues.add((JSONObject) emp) );
         Collections.sort( jsonValues, new Comparator<JSONObject>() {
-            //You can change "Name" with "ID" if you want to sort by ID
+
             private static final String KEY_NAME = "pickingTime";
 
             @Override
@@ -31,12 +32,10 @@ public class Sort {
                     valB = (String) b.get(KEY_NAME);
                 }
                 catch (JSONException e) {
-                    //do something
+                    e.printStackTrace();
                 }
 
                 return valA.compareTo(valB);
-                //if you want to change the sort order, simply use the following:
-                //return -valA.compareTo(valB);
             }
         });
 
