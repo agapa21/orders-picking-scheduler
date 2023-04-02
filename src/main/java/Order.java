@@ -11,7 +11,6 @@ public class Order {
 
     public void setOrderID(String oID){
         orderID = oID;
-        //System.out.println(orderID);
     }
 
     public void setCompleteBy(String cB){
@@ -19,7 +18,6 @@ public class Order {
     }
 
     public void setPickingTime(String pT){
-        //orders.forEach( emp -> checkTime( (Order) emp , store) );
 
         pickingTime = pT.replaceAll("[\\D]", "");
 
