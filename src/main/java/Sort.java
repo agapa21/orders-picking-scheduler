@@ -11,7 +11,7 @@ public class Sort {
 
     Sort(){}
 
-    //sorting orders by picking time
+    //sorting orders by completeBy
     public JSONArray sortJSON(JSONArray jsonArr) {
 
         JSONArray sortedJsonArray = new JSONArray();
@@ -20,7 +20,7 @@ public class Sort {
         jsonArr.forEach( emp -> jsonValues.add((JSONObject) emp) );
         Collections.sort( jsonValues, new Comparator<JSONObject>() {
 
-            private static final String KEY_NAME = "pickingTime";
+            private static final String KEY_NAME = "completeBy";
 
             @Override
             public int compare(JSONObject a, JSONObject b) {

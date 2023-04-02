@@ -1,3 +1,6 @@
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+
 public class Order {
 
     String orderID;
@@ -16,6 +19,9 @@ public class Order {
     }
 
     public void setPickingTime(String pT){
-        pickingTime = pT;
+        //orders.forEach( emp -> checkTime( (Order) emp , store) );
+
+        pickingTime = pT.replaceAll("[\\D]", "");
+
     }
 }
